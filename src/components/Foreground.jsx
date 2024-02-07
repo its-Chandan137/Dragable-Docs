@@ -28,7 +28,7 @@ function Foreground() {
 
 
   return (
-        <div ref = {ref} className='Foreground-full-Screen' key={"card-key"}>
+        <div ref = {ref} className='Foreground-full-Screen'>
           {data.map((x,i) => (
             <Card data = {x} refrence = {ref}/>
           ))}

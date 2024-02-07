@@ -9,6 +9,9 @@ function App() {
     <div className='App-full-Screen'>
       <Background />
       <Foreground/>
+      <div className='sign'>
+        <h5>Little Demon</h5>
+      </div>
     </div>
   )
 }

@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital@1&family=Poppins&family=Sometype+Mono&display=swap');
+
+@font-face {
+    font-family: 'Creattion Demo';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Creattion Demo'), url('Creattion Demo.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Ink Scale';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ink Scale'), url('Ink Scale.woff') format('woff');
+}
+
+
+
 *{
   padding: 0;
   margin: 0;
@@ -113,6 +131,10 @@ body::-webkit-scrollbar{
   height: 115px;
 }
 
+/* .card-Body p{
+  font-family: 'Jujutsu Kaisen.ttf' !important;
+} */
+
 .card .logomb{
   position: relative;
   bottom: 0px;
@@ -146,4 +168,21 @@ body::-webkit-scrollbar{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.sign{
+  width: 90px;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* opacity: 0.2; */
+}
+
+.sign h5{
+  /* font-size: 14px; */
+  font-family: 'Ink Scale' !important;
+  font-weight: 100;
+  color: grey;
+  font-size: 25px;
 }
