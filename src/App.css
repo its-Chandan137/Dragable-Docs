@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital@1&family=Poppins&family=Sometype+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital@1&family=Poppins&family=Sometype+Mono&display=swap');
 
 @font-face {
     font-family: 'Creattion Demo';
     font-style: normal;
     font-weight: normal;
     src: local('Creattion Demo'), url('Creattion Demo.woff') format('woff');
-}
+} */
 
 @font-face {
   font-family: 'Ink Scale';
@@ -14,7 +14,18 @@
   src: local('Ink Scale'), url('Ink Scale.woff') format('woff');
 }
 
-
+:root{
+  --x: 0;
+  --y: 0;
+  --xp: 0;
+  --yp: 0;
+    --hue: calc(0 + (var(--xp) * 500));
+    --bg: hsl(0 0% 10%);
+    --size: 100px;
+    --glow: radial-gradient(
+      
+    )
+}
 
 *{
   padding: 0;

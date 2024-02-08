@@ -1,0 +1,59 @@
+If you'd like to achieve the pointer synchronization effect without directly manipulating the DOM using React, you can utilize React state to manage the pointer coordinates and then pass those coordinates as props to child components that need them. Here's how you can do it:
+
+jsx
+Copy code
+import React, { useState } from 'react';
+
+const PointerSync = () => {
+  const [pointerPosition, setPointerPosition] = useState({ x: 0, y: 0 });
+
+  const handlePointerMove = (event) => {
+    const { clientX, clientY } = event;
+    const pointerX = clientX.toFixed(2);
+    const pointerY = clientY.toFixed(2);
+    const xp = (clientX / window.innerWidth).toFixed(2);
+    const yp = (clientY / window.innerHeight).toFixed(2);
+
+    setPointerPosition({ x: pointerX, y: pointerY });
+  };
+
+  return (
+    <div style={{ display: 'none' }}>
+      {/* Hidden element to trigger pointer move events */}
+      <div style={{ width: '100%', height: '100%' }} onMouseMove={handlePointerMove}></div>
+    </div>
+  );
+};
+
+export default PointerSync;
+In this version:
+
+We use React state (pointerPosition) to store the pointer coordinates.
+The handlePointerMove function updates the pointerPosition state whenever a pointer move event occurs.
+We render a hidden div element that covers the entire viewport. This element captures pointer move events and triggers the handlePointerMove function.
+The hidden div is styled to cover the entire viewport and is hidden from view (display: 'none').
+To use this component, import it into your main application file and include it in your JSX:
+
+jsx
+Copy code
+import React from 'react';
+import PointerSync from './PointerSync';
+
+const App = () => {
+  return (
+    <div className="App">
+      <PointerSync />
+      {/* Other components and content */}
+    </div>
+  );
+};
+
+export default App;
+Now, any component that needs access to the pointer coordinates can receive them as props and use them as needed. This approach keeps the pointer synchronization logic encapsulated within the PointerSync component and avoids direct DOM manipulation.
+
+
+
+
+Message ChatGPT…
+
+ChatGPT can make mistakes. Consider check

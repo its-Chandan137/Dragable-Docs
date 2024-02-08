@@ -1,5 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Card from './Card'
+import Maker from './maker';
+import './addButton.css'
+import PointerSync from './PointerSync';
 
 function Foreground() {
 
@@ -28,11 +31,15 @@ function Foreground() {
 
 
   return (
+    <div>
         <div ref = {ref} className='Foreground-full-Screen'>
           {data.map((x,i) => (
-            <Card data = {x} refrence = {ref}/>
+            <Card key ={i} data = {x} refrence = {ref}/>
           ))}
         </div>
+        <Maker/>
+        <PointerSync/>
+    </div>
   )
 }
 
